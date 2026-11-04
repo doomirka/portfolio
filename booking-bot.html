@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шаблон: Telegram-бот записи для салона или мастера</title>
+<meta name="description" content="Бот записи: услуги с ценами, свободные дни и время, имя и телефон, уведомление владельцу с кнопкой отмены, синхронизация с Google Calendar. Шаблон, не заказ клиента.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://doomirka.github.io/portfolio/booking-bot.html">
+<meta property="og:title" content="Шаблон: Telegram-бот записи для салона или мастера">
+<meta property="og:description" content="Клиент сам выбирает услугу, день и время — владелец сразу получает запись в Telegram. Шаблон, не заказ клиента.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%232563eb'/%3E%3C/svg%3E">
+<style>
+:root{--fg:#111827;--muted:#4b5563;--line:#e5e7eb;--bg:#fff;--card:#f9fafb;--accent:#2563eb;--accent-fg:#fff;--warn:#fef3c7;--warn-line:#f59e0b;--chat:#e7ebf0;--bot:#fff;--me:#dcf8c6}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font:17px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--fg);background:var(--bg);padding-bottom:88px}
+main{max-width:680px;margin:0 auto;padding:0 20px}
+.back{display:inline-block;margin:24px 0 0;color:var(--muted);font-size:.93rem}
+h1{font-size:1.6rem;line-height:1.2;margin:10px 0 12px}
+h2{font-size:1.25rem;margin:40px 0 12px}
+h3{font-size:1rem;margin:0 0 8px}
+p{margin:0 0 12px}
+.lead{color:var(--muted)}
+.demo{background:var(--warn);border:1px solid var(--warn-line);border-radius:10px;padding:12px 14px;margin:0 0 16px}
+.note{color:var(--muted);font-size:.93rem}
+ul{margin:0;padding-left:22px}
+li{margin:6px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.facts{margin:0;padding:0;list-style:none;color:var(--muted)}
+.facts li{margin:3px 0}
+.facts b{color:var(--fg);font-weight:600}
+.chat{background:var(--chat);border-radius:12px;padding:12px;margin:0 0 14px;font-size:.93rem;line-height:1.4}
+.chat .t{color:var(--muted);font-size:.8rem;margin:0 0 8px}
+.b{background:var(--bot);border-radius:12px 12px 12px 4px;padding:8px 10px;margin:0 40px 6px 0;white-space:pre-line}
+.u{background:var(--me);border-radius:12px 12px 4px 12px;padding:8px 10px;margin:0 0 6px 40px;text-align:right}
+.k{display:block;background:rgba(255,255,255,.7);border-radius:8px;padding:6px;margin:0 40px 4px 0;text-align:center;color:#1d4ed8}
+.cta{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line)}
+.cta a{display:block;max-width:680px;margin:0 auto;text-align:center;background:var(--accent);color:var(--accent-fg);text-decoration:none;font-weight:600;padding:14px;border-radius:12px}
+footer{color:var(--muted);font-size:.85rem;margin:48px 0 16px}
+@media (min-width:640px){h1{font-size:2rem}}
+</style>
+</head>
+<body>
+<main>
+
+<a class="back" href="./">← Все работы</a>
+
+<header>
+<h1>Telegram-бот записи для салона, мастера или студии</h1>
+<p class="demo"><b>Это шаблон, а не заказ клиента.</b> Заказчика у этого бота не было: я собрал его как заготовку под частый запрос. Название «Ателье «Шёлк»», услуги и цены в примерах выдуманы.</p>
+<p class="lead">Клиент сам выбирает услугу, день и свободное время, оставляет имя и телефон. Владелец сразу получает запись в Telegram и может отменить её одной кнопкой — клиенту придёт уведомление. Есть заготовка синхронизации с Google Calendar.</p>
+</header>
+
+<section>
+<h2>Как это выглядит</h2>
+<p class="note">Экраны ниже собраны из текстов бота и сокращены, это не снимки с телефона. Живого демо этого бота сейчас нет.</p>
+
+<div class="chat">
+<p class="t">Клиент</p>
+<div class="b">Прайс Ателье «Шёлк» — выберите услугу:</div>
+<span class="k">Консультация стилиста — 500 ₽</span>
+<span class="k">Женская стрижка — 2500 ₽</span>
+<span class="k">Маникюр + гель-лак — 2400 ₽</span>
+<span class="k">Отмена</span>
+<div class="u">Женская стрижка — 2500 ₽</div>
+<div class="b">Женская стрижка — 2500 ₽ (~50 мин)
+Выберите день:</div>
+<span class="k">22.07 (ср)</span>
+<span class="k">23.07 (чт)</span>
+<div class="u">23.07 (чт)</div>
+<div class="b">Женская стрижка — 23.07.2026
+Выберите время:</div>
+<span class="k">11:00</span>
+<span class="k">14:00</span>
+<div class="u">14:00</div>
+<div class="b">Как вас зовут?</div>
+<div class="u">Анна</div>
+<div class="b">Номер телефона для связи (например +79991234567):</div>
+<div class="u">+7 900 000-00-00</div>
+<div class="b">✅ Вы записаны в Ателье «Шёлк»!
+
+Услуга: Женская стрижка
+Дата: 23.07.2026 в 14:00
+К оплате: 2500 ₽
+
+Ждём вас! Если планы изменятся — напишите мастеру.</div>
+</div>
+
+<div class="chat">
+<p class="t">Владелец — служебный бот, клиенты его не видят</p>
+<div class="b">🆕 Новая запись — Ателье «Шёлк»
+Женская стрижка — 23.07.2026 14:00
+Анна | +7 900 000-00-00
+Сумма: 2500 ₽</div>
+<span class="k">❌ Отменить эту запись</span>
+</div>
+</section>
+
+<section>
+<h2>Что умеет</h2>
+<ul>
+<li>Услуги, цены, длительность и часы приёма задаются в одном файле настроек — под новый бизнес код не переписывается.</li>
+<li>Показывает только свободное время: занятое и уже прошедшее скрыто. Перед сохранением время проверяется ещё раз.</li>
+<li>Защита от спама: не больше двух активных записей на человека и пауза между записями.</li>
+<li>Клиент видит свои записи и может сам отменить запись — владельцу придёт уведомление.</li>
+<li>Записи приходят вам в отдельный служебный бот. Там видны все записи, отмена — кнопкой, клиенту придёт уведомление.</li>
+<li>Записи не теряются при перезапуске бота.</li>
+<li>Google Calendar: код синхронизации написан (запись → событие, отмена → удаление), на настоящем календаре ещё не проверялся.</li>
+</ul>
+</section>
+
+<section>
+<h2>Факты</h2>
+<div class="card">
+<ul class="facts">
+<li><b>Когда:</b> июль 2026, несколько вечеров</li>
+<li><b>На чём:</b> Python, python-telegram-bot</li>
+<li><b>Работал живьём:</b> на облачном хостинге в июле 2026, с выдуманным салоном и без календаря</li>
+<li><b>Надёжность:</b> бот не падает при сбоях связи с Telegram и не теряет записи при перезапуске</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Чего в шаблоне нет — доделаю под вас</h2>
+<ul>
+<li>Сейчас окрашивание на 2,5 часа занимает в расписании только один час — на следующий час можно записать другого клиента. Под вас сделаю, чтобы занималось всё время услуги.</li>
+<li>Расписание одно на всех: несколько мастеров со своим графиком — доработка.</li>
+<li>Выходные и перерывы — доработка: сейчас запись открыта каждый день.</li>
+<li>Напоминания клиенту накануне визита.</li>
+<li>Google Calendar — проверю на вашем календаре до сдачи.</li>
+</ul>
+<p class="note">Каждая доработка — отдельная задача. Цену и срок назову, когда посмотрю, что нужно именно вам.</p>
+</section>
+
+<section>
+<h2>Что спрошу до начала работы</h2>
+<ul>
+<li>Список услуг, цены и сколько длится каждая.</li>
+<li>Часы работы, выходные, перерывы, сколько дней вперёд открыта запись.</li>
+<li>Кому приходят записи: вам, администратору или каждому мастеру своё.</li>
+<li>Нужен ли Google Calendar и напоминания клиентам.</li>
+</ul>
+</section>
+
+
+</main>
+
+<nav class="cta"><a href="https://t.me/DimaPendos">Нужен бот записи — @DimaPendos</a></nav>
+
+</body>
+</html>
