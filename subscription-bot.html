@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Демо: бот продажи подписки в закрытый Telegram-канал</title>
+<meta name="description" content="Живое демо: тариф, оплата (имитация), личная ссылка в канал, напоминание и автоудаление по окончании срока.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://doomirka.github.io/portfolio/subscription-bot.html">
+<meta property="og:title" content="Демо: бот продажи подписки в закрытый канал">
+<meta property="og:description" content="Попробуйте сами за 6 минут: доступ по личной ссылке и автоудаление по сроку. Оплата в демо не настоящая.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%232563eb'/%3E%3C/svg%3E">
+<style>
+:root{--fg:#111827;--muted:#4b5563;--line:#e5e7eb;--bg:#fff;--card:#f9fafb;--accent:#2563eb;--accent-fg:#fff;--warn:#fef3c7;--warn-line:#f59e0b}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font:17px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--fg);background:var(--bg);padding-bottom:88px}
+main{max-width:680px;margin:0 auto;padding:0 20px}
+.back{display:inline-block;margin:24px 0 0;color:var(--muted);font-size:.93rem}
+h1{font-size:1.6rem;line-height:1.2;margin:10px 0 12px}
+h2{font-size:1.25rem;margin:40px 0 12px}
+p{margin:0 0 12px}
+.lead{color:var(--muted)}
+.demo{background:var(--warn);border:1px solid var(--warn-line);border-radius:10px;padding:12px 14px;margin:0 0 16px}
+.try{display:block;text-align:center;background:var(--accent);color:var(--accent-fg);text-decoration:none;font-weight:600;padding:14px;border-radius:12px;margin:0 0 8px}
+.try:active{opacity:.85}
+.note{color:var(--muted);font-size:.93rem}
+ol,ul{margin:0;padding-left:22px}
+li{margin:6px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.facts{margin:0;padding:0;list-style:none;color:var(--muted)}
+.facts li{margin:3px 0}
+.facts b{color:var(--fg);font-weight:600}
+.cta{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line)}
+.cta a{display:block;max-width:680px;margin:0 auto;text-align:center;background:var(--accent);color:var(--accent-fg);text-decoration:none;font-weight:600;padding:14px;border-radius:12px}
+footer{color:var(--muted);font-size:.85rem;margin:48px 0 16px}
+@media (min-width:640px){h1{font-size:2rem}}
+</style>
+</head>
+<body>
+<main>
+
+<a class="back" href="./">← Все работы</a>
+
+<header>
+<h1>Бот продажи подписки в закрытый Telegram-канал</h1>
+<p class="demo"><b>Это демо, а не заказ клиента.</b> Оплата в нём имитируется — деньги не списываются, карта не нужна. Канал тоже демонстрационный.</p>
+<p class="lead">Человек выбирает тариф, «оплачивает», получает личную ссылку в закрытый канал. Когда срок кончается, бот сам убирает его из канала и предлагает продлить.</p>
+<a class="try" href="https://t.me/dp_subscribe_demo_bot">Открыть демо-бота в Telegram</a>
+<p class="note">Займёт около 6 минут: выберите тариф «5 минут», нажмите кнопку оплаты — она помечена «демо, без списания», войдите по ссылке и подождите — бот напомнит о конце срока, а потом уберёт вас из канала.</p>
+</header>
+
+<section>
+<h2>Что умеет</h2>
+<ul>
+<li>Личная одноразовая ссылка в канал. Если её переслать — бот уберёт чужого и аннулирует ссылку.</li>
+<li>Напоминание перед концом срока, а по окончании — удаление из канала. В чёрный список человек не попадает и может купить снова.</li>
+<li>Администраторов канала бот не трогает.</li>
+<li>Команды /paysupport, /terms, /privacy — Telegram требует их у ботов, которые принимают оплату.</li>
+<li>Сроки хранятся в базе и проверяются каждую минуту — перезапуск бота их не теряет.</li>
+<li>В демо есть тариф на 5 минут, чтобы увидеть весь путь сразу.</li>
+</ul>
+</section>
+
+<section>
+<h2>Как с оплатой по-настоящему</h2>
+<p>Так работает демо. Доступ к каналу — цифровая услуга, и правила Telegram для разработчиков ботов разрешают брать за неё внутри бота только Telegram Stars. Приём карт через платёжного провайдера за доступ к каналу правилам не соответствует, и Telegram отключает такие боты.</p>
+<p>Поэтому в настоящем проекте оплата — Star-подписка канала: только 30 дней, цена в Stars (от 1 до 10 000), продление и снятие доступа выполняет сам Telegram; бот выдаёт ссылку и ведёт учёт. Про комиссии и вывод Stars рассказываю до начала работы.</p>
+<p class="note" id="stars">Star-подписка в этом демо: реализована в коде по документации Telegram, живой оплатой не проверялась.</p>
+</section>
+
+<section>
+<h2>Факты</h2>
+<div class="card">
+<ul class="facts">
+<li><b>От пустой папки до живого бота, проверенного на участнике:</b> около 1 ч 15 мин, вместе с настройкой канала</li>
+<li><b>На чём:</b> Python без сторонних библиотек, Telegram Bot API, SQLite, systemd</li>
+<li><b>Автотестов:</b> 64 — сроки, выдача и снятие доступа, сбои Telegram, повторная оплата</li>
+<li><b>Подводные камни Bot API:</b> например, фильтр обновлений Telegram запоминает у себя — отладочный скрипт может незаметно отключить рабочему боту приём сообщений. В коде это закрыто тестом.</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Что спрошу до начала работы</h2>
+<ul>
+<li>Срок считать от оплаты или от первого входа в канал? В демо — от оплаты.</li>
+<li>Как оформляем возвраты и что происходит с доступом после возврата.</li>
+<li>Что делать с теми, кого добавили в канал вручную, не через бота.</li>
+</ul>
+</section>
+
+<section>
+<h2>Что проверено живьём</h2>
+<p>4 ноября 2026, на настоящем канале и настоящем участнике (второй аккаунт, не администратор): оплата в демо-режиме → личная ссылка → вход в канал → напоминание → удаление из канала по истечении срока. Владелец канала по истечении срока не удалён.</p>
+<p class="note">Не проверялось: тарифы 1 и 30 дней на полный срок (механика та же, что у 5 минут), сотни подписчиков одновременно. Пересылка ссылки чужому проверена автотестом, не вживую.</p>
+</section>
+
+<footer>Демо работает на моём сервере. Если бот не отвечает — значит, он перезапускается; напишите мне.</footer>
+
+</main>
+
+<nav class="cta"><a href="https://t.me/DimaPendos">Нужен такой бот — @DimaPendos</a></nav>
+
+</body>
+</html>

@@ -32,6 +32,8 @@ p{margin:0 0 12px}
 .facts{margin:10px 0 0;padding:0;list-style:none;color:var(--muted)}
 .facts li{margin:2px 0}
 .facts b{color:var(--fg);font-weight:600}
+.card p.more{margin-top:10px}
+.more a{color:var(--accent);font-weight:600;text-decoration:none}
 ul.no{margin:0;padding-left:20px}
 ul.no li{margin:6px 0}
 ul.no li::marker{content:"✕  ";color:#b91c1c}
@@ -59,7 +61,8 @@ footer{color:var(--muted);font-size:.85rem;margin:48px 0 16px}
 <div class="cards">
 <div class="card">
 <h3>Telegram-боты</h3>
-<p>Приём заявок, кнопки и меню, рассылка подписчикам бота, автопостинг в канал.</p>
+<p>Приём заявок, кнопки и меню, рассылка подписчикам бота, автопостинг в канал, продажа доступа в закрытый канал.</p>
+<p class="more"><a href="subscription-bot.html">Живое демо: бот подписки на канал →</a></p>
 </div>
 <div class="card">
 <h3>Парсеры и мониторинг</h3>
@@ -77,15 +80,27 @@ footer{color:var(--muted);font-size:.85rem;margin:48px 0 16px}
 </section>
 
 <section>
-<h2>Пример работы</h2>
+<h2>Кейсы</h2>
+<div class="cards">
 <div class="card case">
-<h3>№1. Эта страница</h3>
+<h3>Бот продажи подписки в закрытый канал</h3>
+<p>Тариф, оплата, личная ссылка в канал, напоминание, автоудаление по окончании срока. Живое демо: можно пройти весь путь самому примерно за 6 минут. Оплата в демо не настоящая.</p>
+<ul class="facts">
+<li><b>Собран за:</b> около 1 ч 15 мин до живого бота</li>
+<li><b>Проверено:</b> на настоящем канале и участнике</li>
+<li><b>На чём:</b> Python, Telegram Bot API, SQLite</li>
+</ul>
+<p class="more"><a href="subscription-bot.html">Подробнее и попробовать →</a></p>
+</div>
+<div class="card case">
+<h3>Эта страница</h3>
 <p>Лендинг, который вы сейчас читаете. Чистый HTML и CSS: без конструктора, без шаблона, без фреймворков. Открывается с телефона сразу и не требует обслуживания.</p>
 <ul class="facts">
 <li><b>Собрана за:</b> меньше часа</li>
 <li><b>Вес:</b> ~7 КБ, ни одной загружаемой картинки и сторонней библиотеки</li>
 <li><b>На чём:</b> HTML, CSS, бесплатный хостинг GitHub Pages</li>
 </ul>
+</div>
 </div>
 </section>
 
