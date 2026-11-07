@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Демо: бот мониторинга упоминаний в СМИ с уведомлением в Telegram</title>
+<meta name="description" content="Живое демо: добавьте слово — бот пришлёт новую статью с ним из лент Ленты.ру, РИА Новости, ТАСС и Хабра. Без повторов.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://doomirka.github.io/portfolio/monitor-bot.html">
+<meta property="og:title" content="Демо: бот мониторинга упоминаний">
+<meta property="og:description" content="Новые статьи с вашим словом — уведомлением в Telegram. Попробуйте сами.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%232563eb'/%3E%3C/svg%3E">
+<style>
+:root{--fg:#111827;--muted:#4b5563;--line:#e5e7eb;--bg:#fff;--card:#f9fafb;--accent:#2563eb;--accent-fg:#fff;--warn:#fef3c7;--warn-line:#f59e0b}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font:17px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--fg);background:var(--bg);padding-bottom:88px}
+main{max-width:680px;margin:0 auto;padding:0 20px}
+.back{display:inline-block;margin:24px 0 0;color:var(--muted);font-size:.93rem}
+h1{font-size:1.6rem;line-height:1.2;margin:10px 0 12px}
+h2{font-size:1.25rem;margin:40px 0 12px}
+p{margin:0 0 12px}
+.lead{color:var(--muted)}
+.demo{background:var(--warn);border:1px solid var(--warn-line);border-radius:10px;padding:12px 14px;margin:0 0 16px}
+.try{display:block;text-align:center;background:var(--accent);color:var(--accent-fg);text-decoration:none;font-weight:600;padding:14px;border-radius:12px;margin:0 0 8px}
+.try:active{opacity:.85}
+.note{color:var(--muted);font-size:.93rem}
+ol,ul{margin:0;padding-left:22px}
+li{margin:6px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.facts{margin:0;padding:0;list-style:none;color:var(--muted)}
+.facts li{margin:3px 0}
+.facts b{color:var(--fg);font-weight:600}
+.cta{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line)}
+.cta a{display:block;max-width:680px;margin:0 auto;text-align:center;background:var(--accent);color:var(--accent-fg);text-decoration:none;font-weight:600;padding:14px;border-radius:12px}
+footer{color:var(--muted);font-size:.85rem;margin:48px 0 16px}
+@media (min-width:640px){h1{font-size:2rem}}
+</style>
+</head>
+<body>
+<main>
+
+<a class="back" href="./">← Все работы</a>
+
+<header>
+<h1>Бот мониторинга: новые упоминания — уведомлением в Telegram</h1>
+<p class="demo"><b>Это демо, а не заказ клиента.</b> Источники — открытые новостные ленты изданий. Демо бесплатное и работает без гарантий.</p>
+<p class="lead">Вы добавляете слово: название компании, бренда, города, фамилию. Как только в новостях появляется статья с этим словом, бот присылает заголовок и ссылку. Одна статья — одно уведомление, без повторов.</p>
+<a class="try" href="https://t.me/dp_monitor_demo_bot">Открыть демо-бота в Telegram</a>
+<p class="note">Нажмите «Добавить слово» и напишите, например, «Россия» или название крупной компании. Бот сразу покажет для примера последнюю уже вышедшую статью. Новые пришлёт, как только они появятся в ленте: обычно через 10–20 минут после выхода. Днём по частому слову приходит несколько уведомлений в час, ночью новостей мало.</p>
+</header>
+
+<section>
+<h2>Что умеет</h2>
+<ul>
+<li>Следит сразу за четырьмя изданиями: Лента.ру, РИА Новости, ТАСС, Хабр.</li>
+<li>Ищет в заголовке и в анонсе статьи, если издание его даёт. Слово находит по началу и в основных падежах: «сбер» найдёт «Сбербанк» и «Сбербанка», «Москва» — «в Москве» и «Москвы». Короткие слова вроде «Тула» ищутся только в той форме, как написаны.</li>
+<li>Не присылает одно и то же дважды, даже после перезапуска бота. Статьи старше суток не шлёт, после перерыва досылает пропущенное понемногу, без лавины.</li>
+<li>До 5 слов или фраз на человека, список и удаление кнопкой, /stop стирает все ваши данные.</li>
+<li>Бережно к сайтам-источникам: каждая лента читается примерно раз в 10 минут; если сайт недоступен, паузы между попытками растут до 6 часов.</li>
+</ul>
+</section>
+
+<section>
+<h2>Какие источники можно, а какие — обсуждаем</h2>
+<p>В демо — открытые ленты, которые издания публикуют как раз для программ. Также можно следить за сайтами с открытым API и форумами. Чужие Telegram-каналы обычный бот читать не может: для них нужен отдельный аккаунт, это обсуждаем под задачу.</p>
+<p>У Avito, ЦИАН и похожих площадок есть защита от автоматического сбора и запреты в правилах. Под такую задачу до начала работы смотрим, что возможно: официальный API, выгрузка или партнёрский доступ. Если площадка запрещает сбор, скажу честно и предложу, что можно сделать вместо, — и только потом цену.</p>
+</section>
+
+<section>
+<h2>Факты</h2>
+<div class="card">
+<ul class="facts">
+<li><b>На чём:</b> Python без сторонних библиотек, база SQLite</li>
+<li><b>Работает сам:</b> на сервере круглосуточно, при сбое перезапускается</li>
+<li><b>Автотестов:</b> 58 — повторы, перерыв в работе, недоступный сайт-источник, сбои Telegram, удаление данных</li>
+<li><b>Проверено живьём:</b> 7 ноября 2026 — уведомление о настоящей статье РИА Новости пришло через 4–6 минут после её выхода</li>
+</ul>
+</div>
+</section>
+
+<section>
+<h2>Что спрошу до начала работы</h2>
+<ul>
+<li>Откуда брать: какие сайты, каналы или площадки, есть ли у них API.</li>
+<li>Что считать «новым» и что присылать: только заголовок или с ценой, фото, фильтрами.</li>
+<li>Как часто проверять и кому присылать: вам, в группу, нескольким людям.</li>
+</ul>
+</section>
+
+<section>
+<h2>Что проверено живьём</h2>
+<ul>
+<li><b>Первый запуск:</b> бот запомнил 439 уже вышедших статей как точку отсчёта и не прислал ни одной — старьё не приходит.</li>
+<li><b>Настоящее уведомление:</b> на слово «Москва» пришли две статьи РИА Новости — «Поезд Деда Мороза проехал по ночной Москве» и «Назван средний возраст рождения первого ребенка в Москве», через 4–6 минут после выхода.</li>
+<li><b>Падежи:</b> обе статьи нашлись по форме «в Москве». Первая версия поиска искала только точную форму слова — это заметили на живом прогоне и исправили до публикации, с автотестом.</li>
+<li><b>Без повторов:</b> следующие проверки лент снова видели обе статьи как подходящие, но второй раз их не прислали.</li>
+<li><b>Недоступный источник:</b> на проверке с недоступным адресом бот откладывал следующую попытку на 20, 40, 80, 160, 320 минут, дальше — не больше 6 часов. Раньше срока запросов не было.</li>
+<li><b>Перезапуск:</b> после перезапуска бот поднялся сам; бот и проверка лент стоят в автозапуске.</li>
+</ul>
+</section>
+
+</main>
+
+<nav class="cta"><a href="https://t.me/DimaPendos">Нужен такой бот — @DimaPendos</a></nav>
+
+</body>
+</html>
