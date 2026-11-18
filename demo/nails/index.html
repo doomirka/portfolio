@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Студия «Пудра и шёлк» — маникюр и педикюр в студии на одно кресло — демо-лендинг</title>
+<meta name="description" content="Демонстрационный лендинг: частный мастер маникюра и педикюра, студия на одно кресло. Услуги, цены, запись онлайн.">
+<style>
+:root{--bg:#fbf7f3;--milk:#fffdfb;--pink:#f3dfdc;--rose:#c98f8a;--rose-d:#a86d68;--beige:#e9dccd;--sand:#cdb8a3;--ink:#3d3230;--mute:#7c6c68;--line:#e8d9d3;--r:22px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.2;letter-spacing:.01em}
+h2{font-size:clamp(1.7rem,6vw,2.3rem);margin-bottom:.4em}
+h2 em,h1 em{font-style:italic;color:var(--rose-d)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+.kicker{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rose-d);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:28px;height:1px;background:var(--rose)}
+.lead{color:var(--mute);max-width:560px}
+.demo{background:var(--beige);color:#5b4a43;font-size:.82rem;text-align:center;padding:9px 16px;border-bottom:1px solid var(--sand)}
+.demo b{font-weight:600}
+header{padding:18px 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-family:Georgia,serif;font-size:1.25rem;display:flex;align-items:center;gap:8px}
+.logo i{font-style:italic;color:var(--rose-d)}
+.btn{display:inline-block;background:var(--rose);color:#fff;text-decoration:none;border:0;border-radius:999px;padding:14px 28px;font:500 1rem system-ui,sans-serif;cursor:pointer;transition:background .2s,transform .2s;box-shadow:0 8px 22px -12px var(--rose-d)}
+.btn:hover{background:var(--rose-d);transform:translateY(-1px)}
+.btn.sm{padding:9px 18px;font-size:.88rem}
+.btn.ghost{background:transparent;color:var(--rose-d);border:1px solid var(--rose);box-shadow:none}
+.hero{padding:56px 0 64px;background:radial-gradient(ellipse at 85% 10%,var(--pink) 0,transparent 55%),radial-gradient(ellipse at 0 100%,var(--beige) 0,transparent 50%),var(--milk)}
+.hero .wrap{display:grid;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.1rem,9vw,3.4rem);margin-bottom:18px}
+.hero p{color:var(--mute);font-size:1.07rem;margin-bottom:28px;max-width:470px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:28px;font-size:.88rem;color:var(--mute)}
+.facts span::before{content:"✦ ";color:var(--rose)}
+.art{justify-self:center;width:min(300px,80vw)}
+.art svg{width:100%;height:auto;display:block}
+.svc{display:grid;gap:0;margin-top:32px;border-top:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 4px;border-bottom:1px solid var(--line)}
+.row h3{font-size:1.12rem}
+.row p{font-size:.88rem;color:var(--mute);margin-top:2px}
+.price{font-family:Georgia,serif;font-size:1.15rem;white-space:nowrap;color:var(--rose-d)}
+.note{font-size:.85rem;color:var(--mute);margin-top:16px}
+.soft{background:var(--milk);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about{display:grid;gap:36px;align-items:center}
+.portrait{aspect-ratio:4/5;max-width:340px;width:100%;border-radius:200px 200px var(--r) var(--r);background:linear-gradient(160deg,var(--pink),var(--beige) 70%,var(--sand));position:relative;justify-self:center;overflow:hidden}
+.portrait svg{position:absolute;inset:0;width:100%;height:100%}
+.about ul{list-style:none;margin-top:20px;display:grid;gap:10px}
+.about li{padding-left:28px;position:relative}
+.about li::before{content:"";position:absolute;left:0;top:.7em;width:16px;height:1px;background:var(--rose)}
+.sign{font-family:Georgia,serif;font-style:italic;font-size:1.3rem;color:var(--rose-d);margin-top:22px}
+.steps{display:grid;gap:14px;margin-top:32px;counter-reset:s}
+.step{background:var(--milk);border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 22px 70px;position:relative}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:22px;top:20px;width:32px;height:32px;border-radius:50%;border:1px solid var(--rose);color:var(--rose-d);font:1rem/30px Georgia,serif;text-align:center}
+.step h3{font-size:1.08rem;margin-bottom:4px}
+.step p{font-size:.92rem;color:var(--mute)}
+.steril{margin-top:40px;background:linear-gradient(135deg,var(--pink),var(--beige));border-radius:var(--r);padding:28px 24px}
+.steril h3{font-size:1.35rem;margin-bottom:14px}
+.steril ol{list-style:none;display:grid;gap:12px}
+.steril li{display:flex;gap:12px;font-size:.94rem}
+.steril li b{font-weight:600}
+.steril .ic{flex:none;width:30px;height:30px;border-radius:50%;background:var(--milk);display:grid;place-items:center;font-size:.9rem}
+.revs{display:grid;gap:16px;margin-top:28px}
+.rev{background:var(--milk);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.rev p{font-family:Georgia,serif;font-size:1.02rem;line-height:1.55}
+.rev small{display:block;margin-top:14px;color:var(--mute);font-size:.85rem}
+.stars{color:var(--rose);letter-spacing:2px;margin-bottom:8px;font-size:.9rem}
+.fake{display:inline-block;font-size:.8rem;color:var(--mute);background:var(--beige);border-radius:999px;padding:4px 12px}
+.book{display:grid;gap:32px}
+.info dl{display:grid;gap:14px;margin-top:20px}
+.info dt{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-d)}
+.info dd{font-size:1rem}
+form{background:var(--milk);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;display:grid;gap:14px;box-shadow:0 24px 50px -36px rgba(120,80,70,.45)}
+form h3{font-size:1.4rem}
+label{font-size:.85rem;color:var(--mute);display:grid;gap:6px}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 14px;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px var(--pink)}
+textarea{min-height:76px;resize:vertical}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:.82rem}
+.chk input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:var(--rose-d)}
+#ok{display:none;background:var(--pink);border-radius:14px;padding:14px 16px;font-size:.92rem}
+footer{padding:36px 0 44px;text-align:center;font-size:.85rem;color:var(--mute);border-top:1px solid var(--line)}
+footer .logo{justify-content:center;margin-bottom:8px}
+@media(min-width:760px){
+section{padding:88px 0}
+.hero{padding:84px 0 96px}
+.hero .wrap{grid-template-columns:1.2fr .8fr}
+.about{grid-template-columns:.8fr 1.2fr;gap:64px}
+.steps{grid-template-columns:repeat(2,1fr)}
+.revs{grid-template-columns:repeat(3,1fr)}
+.book{grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.svc{grid-template-columns:1fr 1fr;column-gap:48px}
+form{padding:34px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo"><b>Демонстрационная работа.</b> Бизнес, название, цены, отзывы и контакты вымышлены — это не сайт реального заказчика.</div>
+
+<header><div class="wrap">
+<div class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98f8a" stroke-width="1.3" aria-hidden="true"><path d="M12 3c3 4 3 9 0 18-3-9-3-14 0-18z"/><path d="M12 21C9 15 5 12 3 11c4-1 7 1 9 4M12 21c3-6 7-9 9-10-4-1-7 1-9 4"/></svg><span>Пудра <i>и</i> шёлк</span></div>
+<a class="btn sm" href="#book">Записаться</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+<div>
+<div class="kicker">Студия на одно кресло</div>
+<h1>Маникюр, за которым <em>не стыдно</em> протянуть руку</h1>
+<p>Аккуратная кутикула, ровное покрытие и носка до трёх недель без сколов. В студии только вы и мастер: без очереди, без фена соседки и чужих разговоров над ухом.</p>
+<div class="cta"><a class="btn" href="#book">Выбрать время</a><a class="btn ghost" href="#price">Цены</a></div>
+<div class="facts"><span>Стерильные инструменты из крафт-пакета</span><span>Кофе или чай</span><span>Окна до 21:00</span></div>
+</div>
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 300 340" fill="none">
+<defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dfdc"/><stop offset="1" stop-color="#e9dccd"/></linearGradient><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2aaa3"/><stop offset="1" stop-color="#c98f8a"/></linearGradient></defs>
+<path d="M150 10c80 0 140 60 140 150S230 330 150 330 10 250 10 160 70 10 150 10z" fill="url(#g1)"/>
+<circle cx="150" cy="170" r="118" stroke="#c98f8a" stroke-width=".8" opacity=".5"/>
+<g transform="translate(150 175)">
+<rect x="-78" y="-70" width="34" height="96" rx="17" fill="url(#g2)" transform="rotate(-14)"/>
+<rect x="-34" y="-96" width="36" height="112" rx="18" fill="url(#g2)" transform="rotate(-4)"/>
+<rect x="12" y="-98" width="36" height="114" rx="18" fill="url(#g2)" transform="rotate(5)"/>
+<rect x="56" y="-76" width="32" height="96" rx="16" fill="url(#g2)" transform="rotate(14)"/>
+<path d="M-62-60c6-6 12-6 14 0M-20-90c6-6 14-6 16 0M24-92c6-6 14-6 16 0M66-64c5-5 11-5 13 0" stroke="#fffdfb" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+</g>
+<path d="M58 72l4 10 10 4-10 4-4 10-4-10-10-4 10-4zM238 250l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#fffdfb"/>
+</svg>
+</div>
+</div></section>
+
+<section id="price"><div class="wrap">
+<div class="kicker">Услуги и цены</div>
+<h2>Прайс <em>без сюрпризов</em></h2>
+<p class="lead">Итоговую стоимость называю до начала работы. Снятие своего покрытия уже входит в цену.</p>
+<div class="svc">
+<div class="row"><div><h3>Маникюр без покрытия</h3><p>Комбинированный, форма, уход за кутикулой</p></div><div class="price">от 1 300 ₽</div></div>
+<div class="row"><div><h3>Маникюр + гель-лак</h3><p>Выравнивание базой, однотон, ~2 часа</p></div><div class="price">от 2 600 ₽</div></div>
+<div class="row"><div><h3>Укрепление гелем</h3><p>Для тонких и ломких ногтей</p></div><div class="price">от 3 000 ₽</div></div>
+<div class="row"><div><h3>Наращивание</h3><p>Гель, длина до второго размера</p></div><div class="price">от 4 000 ₽</div></div>
+<div class="row"><div><h3>Педикюр + гель-лак</h3><p>Пальчики и стопы, аппаратная обработка</p></div><div class="price">от 3 400 ₽</div></div>
+<div class="row"><div><h3>Комплекс «руки + ноги»</h3><p>За один визит, с покрытием</p></div><div class="price">от 5 600 ₽</div></div>
+<div class="row"><div><h3>Дизайн</h3><p>Френч, втирка, стемпинг, роспись</p></div><div class="price">от 100 ₽/ноготь</div></div>
+<div class="row"><div><h3>Снятие чужого покрытия</h3><p>Если делали у другого мастера</p></div><div class="price">от 400 ₽</div></div>
+</div>
+<p class="note">Цены указаны для примера оформления блока.</p>
+</div></section>
+
+<section class="soft"><div class="wrap about">
+<div class="portrait" aria-hidden="true"><svg viewBox="0 0 340 425" fill="none" preserveAspectRatio="xMidYMid slice"><circle cx="170" cy="150" r="56" fill="#fffdfb" opacity=".55"/><path d="M60 425c0-80 50-140 110-140s110 60 110 140" fill="#fffdfb" opacity=".55"/><path d="M40 60c60 30 200 30 260 0" stroke="#c98f8a" stroke-width=".8" opacity=".6"/></svg></div>
+<div>
+<div class="kicker">О мастере</div>
+<h2>Меня зовут Вера, <em>и это моя студия</em></h2>
+<p class="lead">Я ушла из большого салона, чтобы работать так, как считаю правильным: без спешки по 40 минут на клиента и без компромиссов в стерильности. Небольшая светлая комната, одно кресло, хороший свет и плед, если зябко.</p>
+<ul>
+<li>Подстраиваю форму под ваши пальцы, а не под тренд из ленты.</li>
+<li>Работаю на материалах, у которых есть паспорт и сертификаты.</li>
+<li>Если покрытие отслоится в первые 7 дней — исправлю бесплатно.</li>
+</ul>
+<div class="sign">Вера</div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="kicker">Как проходит визит</div>
+<h2>Два часа, <em>которые только ваши</em></h2>
+<div class="steps">
+<div class="step"><h3>Встречаю и обсуждаем</h3><p>Чай или кофе, смотрим референсы, решаем форму, длину и цвет. Палитра — больше 200 оттенков.</p></div>
+<div class="step"><h3>При вас вскрываю крафт-пакет</h3><p>Металл — после полного цикла стерилизации, пилки и бафы — новые для каждого клиента.</p></div>
+<div class="step"><h3>Работаю без спешки</h3><p>Обработка, выравнивание, покрытие. Можно молчать и слушать музыку, можно болтать.</p></div>
+<div class="step"><h3>Уходите с готовыми ногтями</h3><p>Масло для кутикулы, рекомендации по уходу и запись на следующий раз через 3–4 недели.</p></div>
+</div>
+<div class="steril">
+<h3>Стерильность — не на словах</h3>
+<ol>
+<li><span class="ic">💧</span><span><b>Мойка и дезинфекция</b> — инструменты замачиваются в растворе сразу после клиента.</span></li>
+<li><span class="ic">🧪</span><span><b>Ультразвук и сушка</b> — очистка от мельчайших частиц, затем упаковка в крафт-пакеты.</span></li>
+<li><span class="ic">♨️</span><span><b>Сухожар 180 °C</b> — стерилизация с индикатором на каждом пакете: цвет сменился — цикл прошёл.</span></li>
+<li><span class="ic">✂️</span><span><b>Вскрытие при вас</b> — пакет открываю только в начале вашего визита.</span></li>
+</ol>
+</div>
+</div></section>
+
+<section class="soft"><div class="wrap">
+<div class="kicker">Отзывы</div>
+<h2>Что говорят <em>гостьи</em></h2>
+<span class="fake">Отзывы вымышлены — пример оформления блока</span>
+<div class="revs">
+<div class="rev"><div class="stars">★★★★★</div><p>«Хожу уже полгода. Покрытие стабильно держится три недели, и ни разу ни заусенца. А ещё у Веры удивительно тихо — это мой час отдыха.»</p><small>Алина, руки + гель-лак</small></div>
+<div class="rev"><div class="stars">★★★★★</div><p>«Боялась педикюра после неудачного опыта. Здесь всё вскрыли при мне, объяснили каждый шаг. Ноги как новые, ничего не болело.»</p><small>Марина, педикюр</small></div>
+<div class="rev"><div class="stars">★★★★★</div><p>«Пришла с картинкой из интернета, а Вера предложила форму чуть короче — и оказалась права: на моих пальцах смотрится в разы лучше.»</p><small>Ксения, наращивание</small></div>
+</div>
+</div></section>
+
+<section id="book"><div class="wrap book">
+<div class="info">
+<div class="kicker">Запись и контакты</div>
+<h2>Выберите <em>удобное время</em></h2>
+<p class="lead">Оставьте заявку — перезвоню или напишу в течение часа и предложу ближайшие окна.</p>
+<dl>
+<div><dt>Адрес</dt><dd>ул. Примерная, 12, вход со двора, 2 этаж</dd></div>
+<div><dt>Телефон</dt><dd>+7 (000) 000-00-00</dd></div>
+<div><dt>Почта</dt><dd>example@example.com</dd></div>
+<div><dt>Часы работы</dt><dd>Вт–Сб: 10:00–21:00<br>Вс: 11:00–17:00 · Пн — выходной</dd></div>
+<div><dt>Соцсети</dt><dd>ВКонтакте и Telegram — «Пудра и шёлк» (пример)</dd></div>
+</dl>
+</div>
+<form method="post" onsubmit="document.getElementById('ok').style.display='block';this.querySelector('button').textContent='Демо: не отправлено';return false">
+<h3>Заявка на запись</h3>
+<label>Ваше имя<input name="name" required autocomplete="name" placeholder="Как к вам обращаться"></label>
+<label>Телефон<input name="phone" type="tel" required autocomplete="tel" placeholder="+7 (___) ___-__-__" pattern="[0-9+()\s-]{10,}"></label>
+<label>Услуга<select name="service" required>
+<option value="">Выберите услугу</option>
+<option>Маникюр без покрытия</option>
+<option>Маникюр + гель-лак</option>
+<option>Укрепление гелем</option>
+<option>Наращивание</option>
+<option>Педикюр + гель-лак</option>
+<option>Комплекс «руки + ноги»</option>
+<option>Пока не знаю, нужна консультация</option>
+</select></label>
+<label>Комментарий<textarea name="comment" placeholder="Удобные дни, идея дизайна"></textarea></label>
+<label class="chk"><input type="checkbox" required><span>Согласна(ен) на обработку персональных данных для связи по заявке</span></label>
+<button class="btn" type="submit">Отправить заявку</button>
+<div id="ok" role="status">Это демонстрационная страница, заявка не отправляется. На настоящем сайте она придёт владельцу в Telegram за секунды.</div>
+</form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div class="logo"><span>Пудра <i>и</i> шёлк</span></div>
+<p>Демонстрационная работа: бизнес, цены, отзывы и контакты вымышлены.</p>
+</div></footer>
+
+</body>
+</html>

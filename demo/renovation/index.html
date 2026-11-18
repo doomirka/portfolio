@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>«Прямой угол» — ремонт квартир под ключ и частично — демо-лендинг</title>
+<meta name="description" content="Демонстрационный лендинг: небольшая бригада, ремонт квартир — косметический, капитальный, санузлы. Цены за м² и за работу, бесплатный замер.">
+<style>
+:root{--bg:#f3ece0;--paper:#faf6ee;--ink:#22261f;--mute:#5f6158;--line:#d8ccb6;--green:#1f4a3a;--green2:#2c5f4b;--terra:#b65a3a;--terra-l:#ecd5c6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:normal;line-height:1.2}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+.demo{background:var(--green);color:#efe7d8;font-size:13.5px;text-align:center;padding:9px 16px;line-height:1.45}
+.demo b{color:#f3c9b3;font-weight:600}
+header{border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+.logo{display:flex;align-items:center;gap:10px;font-family:Georgia,serif;font-size:19px;text-decoration:none}
+.logo svg{flex:none}
+.top .ph{font-size:14px;color:var(--mute);text-decoration:none;white-space:nowrap}
+.hero{padding:44px 0 40px;display:grid;gap:30px}
+.kicker{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:12px}
+.hero h1{font-size:34px;margin-bottom:14px}
+.hero p.lead{color:var(--mute);font-size:17px;max-width:34em;margin-bottom:24px}
+.btn{display:inline-block;background:var(--green);color:#fff;border:0;border-radius:3px;padding:14px 24px;font:600 16px system-ui,sans-serif;text-decoration:none;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--green2)}
+.btn-ghost{background:none;color:var(--green);border:1px solid var(--green);margin-left:8px}
+.btn-ghost:hover{background:var(--paper)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:30px}
+.facts div{padding:14px 10px 12px 0;font-size:13px;color:var(--mute)}
+.facts div+div{padding-left:12px;border-left:1px solid var(--line)}
+.facts b{display:block;font:22px Georgia,serif;color:var(--green)}
+.facts small{display:block;font-size:11px;color:var(--terra);margin-top:2px}
+.plan{background:var(--paper);border:1px solid var(--line);padding:18px}
+.plan svg{width:100%;height:auto;display:block}
+.plan p{font-size:12.5px;color:var(--mute);margin-top:8px;text-align:center}
+section{padding:52px 0;border-top:1px solid var(--line)}
+section h2{font-size:28px;margin-bottom:8px}
+.sub{color:var(--mute);margin-bottom:26px;max-width:38em}
+table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line)}
+th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:600;background:#efe6d6}
+td.p{white-space:nowrap;text-align:right;font-weight:600;color:var(--green)}
+th.p{text-align:right}
+td small{display:block;color:var(--mute);font-size:13.5px;margin-top:2px}
+tr:last-child td{border-bottom:0}
+.note{font-size:13.5px;color:var(--mute);margin-top:12px}
+.steps{list-style:none;display:grid;gap:0;counter-reset:s;border-top:1px solid var(--line)}
+.steps li{counter-increment:s;display:grid;grid-template-columns:52px 1fr;gap:6px;padding:16px 0;border-bottom:1px solid var(--line)}
+.steps li:before{content:"0" counter(s);font:26px Georgia,serif;color:var(--terra)}
+.steps b{display:block;font-size:17px}
+.steps span{color:var(--mute);font-size:15px}
+.cols{display:grid;gap:28px}
+.est{list-style:none;background:var(--paper);border:1px solid var(--line);padding:6px 18px}
+.est li{padding:11px 0 11px 22px;border-bottom:1px dashed var(--line);position:relative;font-size:15px}
+.est li:last-child{border-bottom:0}
+.est li:before{content:"";position:absolute;left:0;top:19px;width:10px;height:2px;background:var(--terra)}
+.about p{margin-bottom:12px}
+.about .sign{font-family:Georgia,serif;font-style:italic;color:var(--green)}
+.rules{display:grid;gap:10px;margin-top:6px}
+.rules div{border-left:2px solid var(--terra);padding:4px 0 4px 14px;font-size:15px}
+.fake{display:inline-block;font-size:13px;background:var(--terra-l);color:#7a3a22;padding:4px 10px;border-radius:2px;margin-bottom:18px}
+.revs{display:grid;gap:16px}
+.rev{background:var(--paper);border:1px solid var(--line);padding:20px}
+.rev p{font-size:15.5px;margin-bottom:12px}
+.rev footer{font-size:13.5px;color:var(--mute)}
+.rev footer b{color:var(--ink);font-weight:600}
+.contact dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:15.5px}
+.contact dt{color:var(--mute)}
+form{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--green);padding:22px}
+form h3{font-size:22px;margin-bottom:4px}
+form .sub{margin-bottom:16px;font-size:14.5px}
+label{display:block;font-size:13.5px;color:var(--mute);margin:12px 0 5px}
+input,select,textarea{width:100%;font:16px system-ui,sans-serif;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:3px;padding:11px 12px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--green);outline-offset:-1px;border-color:var(--green)}
+textarea{min-height:76px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;margin:16px 0 18px;color:var(--mute)}
+.agree input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:var(--green)}
+form .btn{width:100%}
+#ok{display:none;margin-top:16px;padding:14px 16px;background:#e3ece6;border-left:3px solid var(--green);font-size:14.5px}
+.foot{border-top:1px solid var(--line);padding:24px 0 34px;font-size:13px;color:var(--mute)}
+.foot p+p{margin-top:6px}
+@media(min-width:760px){
+.hero{grid-template-columns:1.25fr 1fr;align-items:center;padding:70px 0 60px}
+.hero h1{font-size:46px}
+section{padding:72px 0}
+section h2{font-size:34px}
+.cols{grid-template-columns:1fr 1fr;gap:44px}
+.steps{grid-template-columns:repeat(5,1fr);border-top:0}
+.steps li{grid-template-columns:1fr;border-bottom:0;border-top:2px solid var(--green);padding:14px 14px 0 0}
+.revs{grid-template-columns:repeat(3,1fr)}
+.form-wrap{grid-template-columns:1fr 1.1fr}
+}
+@media(max-width:400px){.btn-ghost{margin:10px 0 0}.hero h1{font-size:30px}th,td{padding:11px 10px}}
+</style>
+</head>
+<body>
+
+<div class="demo"><b>Демонстрационная работа.</b> Бизнес, название, цены, отзывы и контакты вымышлены — это не сайт реального заказчика.</div>
+
+<header><div class="wrap top">
+ <a class="logo" href="#"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" fill="none" stroke="#1f4a3a" stroke-width="2"/><path d="M8 7v15h15" fill="none" stroke="#b65a3a" stroke-width="3"/></svg>Прямой угол</a>
+ <a class="ph" href="#zamer">+7 (000) 000-00-00</a>
+</div></header>
+
+<main>
+<div class="wrap hero">
+ <div>
+  <div class="kicker">Ремонт квартир · бригада из 4 человек</div>
+  <h1>Ремонт, после которого не хочется ничего переделывать</h1>
+  <p class="lead">Косметика, капитальный ремонт и санузлы — под ключ или отдельными работами. Смета по пунктам до начала работ, цена в договоре не растёт.</p>
+  <a class="btn" href="#zamer">Вызвать замерщика бесплатно</a><a class="btn btn-ghost" href="#ceny">Цены</a>
+  <div class="facts">
+   <div><b>0 ₽</b>замер и смета</div>
+   <div><b>2 года</b>гарантия по договору</div>
+   <div><b>120+</b>квартир<small>цифра — пример</small></div>
+  </div>
+ </div>
+ <div class="plan" aria-hidden="true">
+  <svg viewBox="0 0 300 220">
+   <g fill="none" stroke="#22261f" stroke-width="3"><path d="M10 10h280v200H10z"/><path d="M150 10v80M150 125v85M150 140h-55M60 140H10M190 90h100"/></g>
+   <g fill="none" stroke="#b65a3a" stroke-width="1.5"><path d="M150 90a35 35 0 0 1 35 0" stroke-dasharray="3 3"/><path d="M60 140a35 35 0 0 0 35 0" stroke-dasharray="3 3"/></g>
+   <rect x="198" y="20" width="84" height="62" fill="#ecd5c6" opacity=".6"/>
+   <g fill="#1f4a3a" font-family="Georgia,serif" font-size="12"><text x="38" y="72">Комната</text><text x="38" y="88" font-size="10" fill="#5f6158">18,4 м²</text><text x="210" y="50">Санузел</text><text x="210" y="66" font-size="10" fill="#5f6158">4,2 м²</text><text x="196" y="160">Кухня</text><text x="196" y="176" font-size="10" fill="#5f6158">9,8 м²</text><text x="40" y="182">Прихожая</text></g>
+   <g stroke="#5f6158" stroke-width="1"><path d="M10 218h280M10 214v8M290 214v8"/></g>
+  </svg>
+  <p>Начинаем с обмерного плана — по нему считаем смету</p>
+ </div>
+</div>
+
+<section id="ceny"><div class="wrap">
+ <h2>Цены на работы</h2>
+ <p class="sub">Цена работ без материалов. Точная сумма — после замера: всё зависит от состояния стен, пола и того, что хочется получить в итоге.</p>
+ <table>
+  <thead><tr><th>Работа</th><th class="p">Цена</th></tr></thead>
+  <tbody>
+   <tr><td>Косметический ремонт<small>обои или покраска, потолок, ламинат, плинтусы</small></td><td class="p">от 4 500 ₽/м²</td></tr>
+   <tr><td>Капитальный ремонт<small>демонтаж, электрика, штукатурка, стяжка, чистовая отделка</small></td><td class="p">от 11 000 ₽/м²</td></tr>
+   <tr><td>Санузел под ключ<small>совмещённый до 4 м²: трубы, гидроизоляция, плитка, сантехника</small></td><td class="p">от 190 000 ₽</td></tr>
+   <tr><td>Укладка плитки<small>стены и пол, формат до 60×120</small></td><td class="p">от 1 900 ₽/м²</td></tr>
+   <tr><td>Штукатурка стен по маякам</td><td class="p">от 750 ₽/м²</td></tr>
+   <tr><td>Стяжка пола<small>полусухая, до 5 см</small></td><td class="p">от 700 ₽/м²</td></tr>
+   <tr><td>Электромонтаж<small>штроба, кабель, подрозетник</small></td><td class="p">от 1 300 ₽/точка</td></tr>
+  </tbody>
+ </table>
+ <p class="note">Материалы закупаем сами по вашему списку или вместе с вами — чеки прикладываем к отчёту.</p>
+</div></section>
+
+<section><div class="wrap">
+ <h2>Как идёт ремонт</h2>
+ <p class="sub">Пять шагов, и на каждом вы знаете, что происходит и сколько это стоит.</p>
+ <ol class="steps">
+  <li><div><b>Замер</b><span>Приезжаем, обмеряем, проверяем стены и проводку. Бесплатно.</span></div></li>
+  <li><div><b>Смета</b><span>Через 2 дня — смета по пунктам: работы, объёмы, материалы.</span></div></li>
+  <li><div><b>Договор</b><span>Фиксируем цену, сроки и этапы оплаты. Без предоплаты за всё сразу.</span></div></li>
+  <li><div><b>Работы</b><span>Фото-отчёт каждую неделю. Платите за закрытый этап.</span></div></li>
+  <li><div><b>Приёмка</b><span>Проверяем уровнем и правилом вместе с вами, подписываем акт.</span></div></li>
+ </ol>
+</div></section>
+
+<section><div class="wrap cols">
+ <div>
+  <h2>Что входит в смету</h2>
+  <p class="sub">Никаких «а это мы не учли». Смету можно показать знакомому мастеру — там всё прописано.</p>
+ </div>
+ <ul class="est">
+  <li>Объём каждой работы в м², пог. м или штуках</li>
+  <li>Цена за единицу и итог по каждому помещению</li>
+  <li>Список черновых материалов с расходом</li>
+  <li>Демонтаж и вывоз мусора — отдельной строкой</li>
+  <li>Сроки по этапам и график оплат</li>
+  <li>Что в смету не входит — тоже пишем прямо</li>
+ </ul>
+</div></section>
+
+<section class="about"><div class="wrap cols">
+ <div>
+  <h2>О бригаде</h2>
+  <p>Нас четверо: прораб, плиточник, электрик и отделочник. Работаем одной командой и ведём не больше двух объектов одновременно — поэтому на вашей квартире люди каждый день, а не «на следующей неделе заскочим».</p>
+  <p>Не берёмся за то, что не умеем сделать хорошо. Если в квартире нужен специалист со стороны, например для замены стояков по согласованию с управляющей компанией, честно скажем об этом на замере.</p>
+  <p class="sign">— Андрей, прораб</p>
+ </div>
+ <div class="rules">
+  <div>Убираем за собой каждый день и укрываем то, что не ремонтируем</div>
+  <div>Работаем по тишине: шумные работы — с 9:00 до 19:00, в выходные — тихие</div>
+  <div>Скрытые работы фотографируем до закрытия: трубы и кабели будет видно</div>
+  <div>Гарантия 2 года прописана в договоре, недочёты исправляем за свой счёт</div>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <h2>Отзывы</h2>
+ <div class="fake">Отзывы вымышлены — пример оформления блока</div>
+ <div class="revs">
+  <div class="rev"><p>Делали капитальный в двушке 54 м². Смета разошлась с итогом на 6 тысяч — и то потому, что я сама решила добавить подсветку. Каждую пятницу получала фото и короткий отчёт.</p><footer><b>Ольга</b> · капитальный ремонт, 2 месяца</footer></div>
+  <div class="rev"><p>Санузел сделали за 16 дней. Плитка легла ровно, швы совпадают, люк под ванной открывается. Отдельно понравилось, что перед закрытием стен прислали фото всех труб.</p><footer><b>Дмитрий</b> · санузел под ключ</footer></div>
+  <div class="rev"><p>Нужно было быстро освежить квартиру перед сдачей: обои, потолки, ламинат. Уложились в 9 дней, мусор вывезли, после себя помыли окна — не ожидал.</p><footer><b>Сергей</b> · косметический ремонт</footer></div>
+ </div>
+</div></section>
+
+<section id="zamer"><div class="wrap cols form-wrap">
+ <div class="contact">
+  <h2>Контакты</h2>
+  <p class="sub">Замерщик выезжает в течение 1–2 дней после звонка. Замер и смета ни к чему не обязывают.</p>
+  <dl>
+   <dt>Телефон</dt><dd>+7 (000) 000-00-00</dd>
+   <dt>Почта</dt><dd>example@example.com</dd>
+   <dt>Офис</dt><dd>ул. Примерная, 12</dd>
+   <dt>Звонки</dt><dd>Пн–Сб, 9:00–20:00</dd>
+   <dt>Замеры</dt><dd>Пн–Вс, по записи</dd>
+   <dt>Мы есть</dt><dd>ВКонтакте и Telegram — «Прямой угол» (пример)</dd>
+  </dl>
+ </div>
+ <form method="post" onsubmit="document.getElementById('ok').style.display='block';this.querySelector('button').textContent='Демо: не отправлено';return false">
+  <h3>Заявка на бесплатный замер</h3>
+  <p class="sub">Перезвоним в течение часа в рабочее время и договоримся о дне.</p>
+  <label for="n">Имя</label>
+  <input id="n" name="name" required autocomplete="name" placeholder="Как к вам обращаться">
+  <label for="t">Телефон</label>
+  <input id="t" name="phone" type="tel" required autocomplete="tel" placeholder="+7 (___) ___-__-__" pattern="[0-9+()\s\-]{10,}">
+  <div class="row2">
+   <div><label for="s">Что нужно</label>
+   <select id="s" name="service" required>
+    <option value="">Выберите</option>
+    <option>Косметический ремонт</option>
+    <option>Капитальный ремонт</option>
+    <option>Санузел под ключ</option>
+    <option>Отдельные работы</option>
+    <option>Пока не знаю</option>
+   </select></div>
+   <div><label for="a">Площадь, м²</label>
+   <input id="a" name="area" type="number" min="1" max="1000" step="any" inputmode="decimal" placeholder="Например, 48"></div>
+  </div>
+  <label for="c">Комментарий</label>
+  <textarea id="c" name="comment" placeholder="Новостройка или вторичка, когда хотите начать"></textarea>
+  <label class="agree"><input type="checkbox" required> Согласен на обработку персональных данных для связи по заявке</label>
+  <button class="btn" type="submit">Записаться на замер</button>
+  <div id="ok" role="status">Это демонстрационная страница, заявка не отправляется. На настоящем сайте она придёт владельцу в Telegram за секунды.</div>
+ </form>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wrap">
+ <p>© «Прямой угол» — ремонт квартир. ул. Примерная, 12 · +7 (000) 000-00-00</p>
+ <p>Демонстрационная работа: бизнес, название, цены, отзывы и контакты вымышлены.</p>
+</div></footer>
+</body>
+</html>

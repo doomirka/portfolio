@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="Демонстрационный лендинг персонального фитнес-тренера: тренировки в зале и онлайн-программы, тарифы, запись на первую тренировку.">
+<title>Артём Ветров — персональный тренер: зал и онлайн — демо-лендинг</title>
+<style>
+:root{--a:#6d28d9;--a2:#8b5cf6;--al:#f3eeff;--ink:#111018;--mut:#5d5a6b;--line:#e7e4ee;--bg:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);-webkit-text-size-adjust:100%}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+.demo{background:var(--ink);color:#e9e6f5;font-size:13px;line-height:1.4;padding:9px 18px;text-align:center}
+.demo b{color:#c4b5fd}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{font-weight:900;font-size:20px;letter-spacing:-.02em}
+.logo span{color:var(--a)}
+.nav a{color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;margin-left:16px}
+.nav a.hide{display:none}
+h1,h2,h3{font-weight:900;letter-spacing:-.03em;line-height:1.02}
+h1{font-size:clamp(42px,12vw,92px);margin:18px 0 18px}
+h1 em{font-style:normal;color:var(--a)}
+h2{font-size:clamp(32px,8vw,56px);margin-bottom:14px}
+h3{font-size:22px;letter-spacing:-.02em}
+.lead{font-size:18px;color:var(--mut);max-width:560px}
+.btn{display:inline-block;background:var(--a);color:#fff;font-weight:800;font-size:17px;text-decoration:none;padding:16px 26px;border-radius:14px;border:0;cursor:pointer;box-shadow:0 8px 24px -8px rgba(109,40,217,.6);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.hero{padding:10px 0 48px;position:relative}
+.tag{display:inline-block;background:var(--al);color:var(--a);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.06em;padding:6px 12px;border-radius:99px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 30px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stats div{border-top:4px solid var(--a);padding-top:10px}
+.stats b{display:block;font-size:30px;font-weight:900;letter-spacing:-.03em}
+.stats span{font-size:13px;color:var(--mut)}
+.note{font-size:12px;color:var(--mut);margin-top:10px}
+.bolt{position:absolute;right:0;top:0;width:150px;opacity:.12;z-index:-1}
+section{padding:56px 0}
+.alt{background:var(--al)}
+.kicker{font-weight:800;color:var(--a);text-transform:uppercase;letter-spacing:.08em;font-size:13px;margin-bottom:8px}
+.svc{list-style:none;margin-top:22px;border-top:2px solid var(--ink)}
+.svc li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.svc b{font-size:17px;display:block}
+.svc small{color:var(--mut);font-size:14px}
+.svc .p{font-weight:900;font-size:19px;white-space:nowrap}
+.first{margin-top:26px;background:var(--ink);color:#fff;border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.first h3{font-size:26px}
+.first h3 span{color:#c4b5fd}
+.first p{color:#cfcbe0}
+.first .btn{align-self:flex-start;background:#fff;color:var(--ink);box-shadow:none}
+.plans{display:grid;gap:16px;margin-top:24px}
+.plan{border:2px solid var(--ink);border-radius:22px;padding:24px;background:#fff;position:relative}
+.plan .n{font-weight:800;text-transform:uppercase;font-size:13px;letter-spacing:.06em;color:var(--mut)}
+.plan .pr{font-size:44px;font-weight:900;letter-spacing:-.04em;margin:6px 0 2px}
+.plan .pr small{font-size:16px;font-weight:700;letter-spacing:0}
+.plan .per{font-size:14px;color:var(--mut)}
+.plan ul{list-style:none;margin:16px 0 20px}
+.plan li{padding:5px 0 5px 26px;position:relative;font-size:15px}
+.plan li:before{content:"";position:absolute;left:0;top:11px;width:14px;height:8px;border-left:3px solid var(--a);border-bottom:3px solid var(--a);transform:rotate(-45deg)}
+.plan .btn{width:100%;text-align:center}
+.plan.hot{background:var(--a);border-color:var(--a);color:#fff;box-shadow:0 20px 40px -18px rgba(109,40,217,.7)}
+.plan.hot .n,.plan.hot .per{color:#ddd3fe}
+.plan.hot li:before{border-color:#fff}
+.plan.hot .btn{background:#fff;color:var(--a);box-shadow:none}
+.badge{position:absolute;top:-14px;right:20px;background:#facc15;color:var(--ink);font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.06em;padding:6px 12px;border-radius:99px}
+.about{display:grid;gap:26px;align-items:center}
+.ph{aspect-ratio:4/5;max-width:340px;border-radius:26px;background:linear-gradient(150deg,var(--a2),var(--a) 55%,#2e1065);position:relative;overflow:hidden}
+.ph svg{position:absolute;inset:0;width:100%;height:100%}
+.ph span{position:absolute;left:16px;bottom:14px;color:#fff;font-weight:800;font-size:13px;opacity:.85}
+.facts{list-style:none;margin-top:16px}
+.facts li{padding:10px 0;border-bottom:1px solid var(--line)}
+.facts b{color:var(--a)}
+.rv-note{display:inline-block;font-size:13px;background:#fff7d6;border:1px solid #f1d77a;padding:6px 12px;border-radius:10px;margin-bottom:18px}
+.rvs{display:grid;gap:14px}
+.rv{background:#fff;border-radius:20px;padding:22px;border:1px solid var(--line)}
+.rv p{font-size:16px}
+.rv .who{margin-top:12px;font-weight:800;font-size:14px}
+.rv .who span{font-weight:500;color:var(--mut)}
+.q{font-size:48px;line-height:.6;font-weight:900;color:var(--a);display:block;height:22px}
+.ct{display:grid;gap:20px}
+.box{border:2px solid var(--ink);border-radius:22px;padding:22px}
+.box dl{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;margin-top:10px;font-size:15px}
+.box dt{color:var(--mut)}
+.box dd{font-weight:700}
+.hrs{list-style:none;margin-top:10px;font-size:15px}
+.hrs li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed var(--line)}
+form{display:grid;gap:14px;margin-top:10px}
+label{font-weight:700;font-size:14px;display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:16px;width:100%;padding:13px 14px;border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--a)}
+textarea{min-height:84px;resize:vertical}
+.chk{display:flex;gap:10px;align-items:flex-start;font-weight:500;font-size:13px;color:var(--mut)}
+.chk input{width:20px;height:20px;flex:none;margin-top:1px;accent-color:var(--a)}
+#ok{display:none;background:var(--al);border-left:5px solid var(--a);padding:14px 16px;border-radius:10px;font-weight:600;margin-top:14px}
+footer{background:var(--ink);color:#bdb8cf;padding:30px 0;font-size:13px}
+footer b{color:#fff;font-size:17px}
+@media(min-width:720px){
+.nav a.hide{display:inline}
+.hero{padding:30px 0 70px}
+.bolt{width:280px;opacity:.16}
+.stats{max-width:560px}
+section{padding:84px 0}
+.first{flex-direction:row;align-items:center;justify-content:space-between;padding:30px 34px}
+.first .btn{align-self:center;flex:none}
+.plans{grid-template-columns:repeat(3,1fr);align-items:stretch}
+.plan.hot{transform:translateY(-12px)}
+.about{grid-template-columns:340px 1fr;gap:48px}
+.rvs{grid-template-columns:repeat(3,1fr)}
+.ct{grid-template-columns:1fr 1fr 1.2fr}
+}
+</style>
+</head>
+<body>
+<div class="demo"><b>Демонстрационная работа.</b> Бизнес, название, цены, отзывы и контакты вымышлены — это не сайт реального заказчика.</div>
+
+<div class="wrap">
+<header>
+<div class="logo">ВЕТРОВ<span>.</span>ФИТ</div>
+<nav class="nav"><a href="#price" class="hide">Цены</a><a href="#about" class="hide">О тренере</a><a href="#form">Записаться</a></nav>
+</header>
+
+<div class="hero">
+<svg class="bolt" viewBox="0 0 100 160" aria-hidden="true"><path d="M62 0 8 92h36L30 160l62-98H54z" fill="#6d28d9"/></svg>
+<span class="tag">Зал · Онлайн · Без жёсткой диеты</span>
+<h1>Тренируйся <em>по плану</em>, а не по настроению</h1>
+<p class="lead">Персональные тренировки в зале и онлайн-программы под ваш график, уровень и цель. Ставлю технику, слежу за нагрузкой и помогаю не бросить на третьей неделе.</p>
+<div class="cta">
+<a href="#form" class="btn">Записаться на знакомство</a>
+<a href="#price" class="btn ghost">Смотреть цены</a>
+</div>
+<div class="stats">
+<div><b>8 лет</b><span>в тренерской работе</span></div>
+<div><b>60 мин</b><span>одна тренировка</span></div>
+<div><b>1 : 1</b><span>только вы и тренер</span></div>
+</div>
+<p class="note">Цифры — пример оформления блока.</p>
+</div>
+</div>
+
+<section class="alt" id="services">
+<div class="wrap">
+<p class="kicker">Услуги</p>
+<h2>Что можно взять</h2>
+<ul class="svc">
+<li><div><b>Первая тренировка — знакомство</b><small>Разговор о цели, тест движений, пробная нагрузка</small></div><span class="p">от 1 000 ₽</span></li>
+<li><div><b>Персональная тренировка в зале</b><small>60 минут, программа под вас, контроль техники</small></div><span class="p">от 2 500 ₽</span></li>
+<li><div><b>Пакет 8 тренировок</b><small>Два раза в неделю, действует 6 недель</small></div><span class="p">от 18 000 ₽</span></li>
+<li><div><b>Сплит-тренировка вдвоём</b><small>С другом или партнёром, цена за двоих</small></div><span class="p">от 3 500 ₽</span></li>
+<li><div><b>Онлайн-программа на 4 недели</b><small>План тренировок для зала или дома + чат с вопросами</small></div><span class="p">от 6 000 ₽</span></li>
+<li><div><b>Онлайн-сопровождение</b><small>Программа, разбор техники по видео, правки каждую неделю</small></div><span class="p">от 9 000 ₽/мес</span></li>
+<li><div><b>Разбор техники по видео</b><small>Присылаете 3–5 упражнений — получаете подробный разбор</small></div><span class="p">от 1 500 ₽</span></li>
+</ul>
+</div>
+</section>
+
+<section id="price">
+<div class="wrap">
+<p class="kicker">Тарифы</p>
+<h2>Выберите формат</h2>
+<p class="lead">Без абонементов на год и скрытых доплат. Заболели или уехали — пакет можно заморозить.</p>
+<div class="plans">
+<div class="plan">
+<p class="n">Разовая</p>
+<p class="pr">2 500 <small>₽</small></p>
+<p class="per">за одну тренировку</p>
+<ul><li>60 минут в зале</li><li>Программа на занятие</li><li>Постановка техники</li></ul>
+<a href="#form" class="btn ghost">Записаться</a>
+</div>
+<div class="plan hot">
+<span class="badge">Берут чаще всего</span>
+<p class="n">Пакет 8</p>
+<p class="pr">18 000 <small>₽</small></p>
+<p class="per">2 250 ₽ за тренировку</p>
+<ul><li>8 тренировок за 6 недель</li><li>Замеры и план в начале и в конце</li><li>Задания на дни без тренера</li><li>Чат с вопросами между занятиями</li></ul>
+<a href="#form" class="btn">Взять пакет</a>
+</div>
+<div class="plan">
+<p class="n">Онлайн-программа</p>
+<p class="pr">6 000 <small>₽</small></p>
+<p class="per">4 недели, из любого города</p>
+<ul><li>План под ваш зал или дом</li><li>Видео к каждому упражнению</li><li>Ответы в чате в течение дня</li></ul>
+<a href="#form" class="btn ghost">Хочу онлайн</a>
+</div>
+</div>
+<div class="first">
+<div>
+<h3>Первая тренировка — <span>знакомство</span></h3>
+<p>Обсудим цель и опыт, проверим, как вы двигаетесь, и попробуем нагрузку. Поймёте, подходит ли вам формат, — без обязательств покупать пакет.</p>
+</div>
+<a href="#form" class="btn">1 000 ₽ — записаться</a>
+</div>
+</div>
+</section>
+
+<section class="alt" id="about">
+<div class="wrap about">
+<div class="ph">
+<svg viewBox="0 0 200 250" aria-hidden="true"><g fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="10" stroke-linecap="round"><path d="M40 125h120"/><path d="M28 100v50M52 92v66M148 92v66M172 100v50"/></g><circle cx="160" cy="45" r="70" fill="#fff" fill-opacity=".07"/></svg>
+<span>Здесь будет фото тренера</span>
+</div>
+<div>
+<p class="kicker">О тренере</p>
+<h2>Артём Ветров</h2>
+<p class="lead">Работаю с теми, кто давно хотел начать, но не понимает, с какой стороны подойти к залу. И с теми, кто занимается сам, но упёрся в плато.</p>
+<ul class="facts">
+<li><b>Подход.</b> Сначала техника и привычка, потом веса. Никаких «через боль».</li>
+<li><b>Нагрузка.</b> Подбираю по самочувствию в день тренировки, а не по шаблону из интернета.</li>
+<li><b>Питание.</b> Даю общие рекомендации без запретов. Если есть проблемы со здоровьем — сначала к врачу, потом в зал.</li>
+<li><b>Честно о результате.</b> Он зависит от регулярности, сна и питания. Я отвечаю за план и внимание к вам, а не за цифру на весах к пятнице.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="reviews">
+<div class="wrap">
+<p class="kicker">Отзывы</p>
+<h2>Что говорят клиенты</h2>
+<p class="rv-note">Отзывы вымышлены — пример оформления блока.</p>
+<div class="rvs">
+<div class="rv"><span class="q">“</span><p>Год покупала абонемент и ходила на беговую дорожку. За два месяца с Артёмом наконец разобралась в тренажёрах и спокойно приседаю со штангой.</p><p class="who">Марина <span>· пакет 8</span></p></div>
+<div class="rv"><span class="q">“</span><p>Сижу в офисе по 9 часов, спина ныла к вечеру. Взял онлайн-программу на дом — 25 минут утром, и стало заметно бодрее. Удобно, что техника разбирается по видео.</p><p class="who">Денис <span>· онлайн-программа</span></p></div>
+<div class="rv"><span class="q">“</span><p>Пришли вдвоём с мужем на сплит. Нравится, что никто не кричит и не гонит. Нагрузка ровно такая, чтобы на следующий день хотелось прийти снова.</p><p class="who">Ольга и Сергей <span>· сплит-тренировки</span></p></div>
+</div>
+</div>
+</section>
+
+<section class="alt" id="form">
+<div class="wrap ct">
+<div class="box">
+<h3>Контакты</h3>
+<dl>
+<dt>Телефон</dt><dd>+7 (000) 000-00-00</dd>
+<dt>Почта</dt><dd>example@example.com</dd>
+<dt>Зал</dt><dd>ул. Примерная, 12</dd>
+<dt>Соцсети</dt><dd>Telegram и ВКонтакте — «ВЕТРОВ.ФИТ» (пример)</dd>
+</dl>
+</div>
+<div class="box">
+<h3>Часы тренировок</h3>
+<ul class="hrs">
+<li><span>Пн–Пт</span><b>7:00–22:00</b></li>
+<li><span>Суббота</span><b>9:00–18:00</b></li>
+<li><span>Воскресенье</span><b>выходной</b></li>
+<li><span>Онлайн-чат</span><b>10:00–20:00</b></li>
+</ul>
+</div>
+<div class="box" style="background:#fff">
+<h3>Записаться</h3>
+<form method="post" onsubmit="document.getElementById('ok').style.display='block';this.reset();return false">
+<label>Имя<input name="name" required autocomplete="name" placeholder="Как к вам обращаться"></label>
+<label>Телефон<input name="phone" type="tel" required autocomplete="tel" placeholder="+7 (___) ___-__-__"></label>
+<label>Формат
+<select name="plan" required>
+<option value="">Выберите…</option>
+<option>Первая тренировка — знакомство</option>
+<option>Разовая тренировка в зале</option>
+<option>Пакет 8 тренировок</option>
+<option>Сплит-тренировка вдвоём</option>
+<option>Онлайн-программа</option>
+<option>Онлайн-сопровождение</option>
+</select></label>
+<label>Комментарий<textarea name="msg" placeholder="Цель, опыт, удобные дни — по желанию"></textarea></label>
+<label class="chk"><input type="checkbox" required> Согласен(на) на обработку персональных данных для ответа на заявку</label>
+<button class="btn" type="submit">Отправить заявку</button>
+</form>
+<p id="ok" role="status">Это демонстрационная страница, заявка не отправляется. На настоящем сайте она придёт владельцу в Telegram за секунды.</p>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<b>ВЕТРОВ.ФИТ</b>
+<p style="margin-top:8px">Персональные тренировки в зале и онлайн.</p>
+<p style="margin-top:8px">Демонстрационная работа: тренер, цены, отзывы и контакты вымышлены.</p>
+</div>
+</footer>
+</body>
+</html>

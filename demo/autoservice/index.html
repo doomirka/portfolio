@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="Демонстрационный лендинг автосервиса на 3 поста: ТО, диагностика, ходовая, шиномонтаж. Цены, этапы работы, запись онлайн.">
+<title>Автосервис «Три поста» — ТО, диагностика, ходовая, шиномонтаж — демо-лендинг</title>
+<style>
+:root{--g0:#1b1d20;--g1:#25282c;--g2:#2f3337;--g3:#3c4146;--tx:#e9e6df;--mt:#a3a6a8;--ac:#f5a524;--ac2:#ff7a1a;--ok:#9fd36a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--g0);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--ac)}
+.w{max-width:1040px;margin:0 auto;padding:0 16px}
+.demo{background:var(--ac);color:#1b1d20;font-size:13px;line-height:1.4;padding:8px 16px;text-align:center;font-weight:600}
+.stripe{height:10px;background:repeating-linear-gradient(-45deg,var(--ac) 0 14px,var(--g0) 14px 28px)}
+header{border-bottom:1px solid var(--g3);background:var(--g1)}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:15px}
+.logo i{display:grid;place-items:center;width:34px;height:34px;background:var(--ac);color:var(--g0);font-style:normal;font-size:18px}
+.hdr-tel{color:var(--tx);text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap}
+.hero{position:relative;padding:44px 0 40px;background:linear-gradient(180deg,rgba(27,29,32,0) 0,var(--g0) 100%),repeating-linear-gradient(-45deg,rgba(245,165,36,.07) 0 2px,transparent 2px 22px),var(--g1);overflow:hidden}
+.tag{display:inline-block;border:1px solid var(--ac);color:var(--ac);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;margin-bottom:16px}
+h1{font-size:clamp(30px,8vw,52px);line-height:1.05;font-weight:900;letter-spacing:-.01em;text-transform:uppercase;max-width:780px}
+h1 em{font-style:normal;color:var(--ac)}
+.lead{color:var(--mt);font-size:17px;margin:16px 0 24px;max-width:600px}
+.btn{display:inline-block;background:var(--ac);color:var(--g0);font-weight:800;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;padding:16px 26px;border:0;font-size:15px;cursor:pointer;box-shadow:5px 5px 0 var(--ac2);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ac2)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--g3);margin-top:34px;border:1px solid var(--g3)}
+.facts div{background:var(--g2);padding:14px 10px}
+.facts b{display:block;font-size:26px;line-height:1;color:var(--ac);font-weight:900}
+.facts span{font-size:12px;color:var(--mt)}
+section{padding:52px 0;border-top:1px solid var(--g2)}
+h2{font-size:clamp(24px,6vw,34px);font-weight:900;text-transform:uppercase;line-height:1.1;margin-bottom:8px;display:flex;align-items:center;gap:12px}
+h2::before{content:"";width:14px;height:28px;flex:none;background:repeating-linear-gradient(-45deg,var(--ac) 0 4px,transparent 4px 8px)}
+.sub{color:var(--mt);margin-bottom:26px;max-width:640px}
+.price{display:grid;gap:1px;background:var(--g3);border:1px solid var(--g3)}
+.pi{background:var(--g1);padding:18px 16px;display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:end}
+.pi h3{font-size:17px;font-weight:700}
+.pi p{grid-column:1;color:var(--mt);font-size:14px}
+.pi .p{grid-column:2;grid-row:1/3;text-align:right;white-space:nowrap;font-weight:900;font-size:28px;line-height:1;color:var(--ac)}
+.pi .p small{display:block;font-size:12px;color:var(--mt);font-weight:600;margin-bottom:4px}
+.note{font-size:13px;color:var(--mt);margin-top:14px}
+.about{display:grid;gap:22px}
+.about p{margin-bottom:12px}
+.bay{background:var(--g1);border:1px solid var(--g3);padding:16px}
+.bay svg{display:block;width:100%;height:auto}
+.list{list-style:none;display:grid;gap:8px;margin-top:6px}
+.list li{padding-left:24px;position:relative}
+.list li::before{content:"";position:absolute;left:0;top:7px;width:12px;height:12px;background:var(--ac)}
+.steps{list-style:none;counter-reset:s;display:grid;gap:1px;background:var(--g3);border:1px solid var(--g3)}
+.steps li{counter-increment:s;background:var(--g1);padding:18px 16px 18px 72px;position:relative}
+.steps li::before{content:"0" counter(s);position:absolute;left:16px;top:14px;font-size:32px;font-weight:900;color:var(--ac);line-height:1}
+.steps b{display:block;text-transform:uppercase;letter-spacing:.03em;margin-bottom:2px}
+.steps span{color:var(--mt);font-size:14px}
+.rv-note{display:inline-block;font-size:13px;color:var(--g0);background:var(--mt);padding:3px 8px;margin-bottom:18px;font-weight:600}
+.revs{display:grid;gap:14px}
+.rv{background:var(--g1);border-left:4px solid var(--ac);padding:18px 16px}
+.rv q{display:block;quotes:none;margin-bottom:10px}
+.rv cite{font-style:normal;font-size:14px;color:var(--mt)}
+.rv cite b{color:var(--tx)}
+details{background:var(--g1);border:1px solid var(--g3);margin-bottom:-1px}
+summary{cursor:pointer;padding:16px 44px 16px 16px;font-weight:700;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:16px;top:10px;font-size:26px;color:var(--ac);font-weight:400}
+details[open] summary::after{content:"−"}
+details p{padding:0 16px 16px;color:var(--mt)}
+.cg{display:grid;gap:22px}
+.ct{background:var(--g1);border:1px solid var(--g3)}
+.ct div{padding:14px 16px;border-bottom:1px solid var(--g3)}
+.ct div:last-child{border:0}
+.ct small{display:block;font-size:12px;color:var(--mt);text-transform:uppercase;letter-spacing:.08em}
+.ct b{font-size:17px}
+form{background:var(--g2);padding:22px 16px;border-top:6px solid var(--ac);display:grid;gap:14px}
+label{font-size:13px;color:var(--mt);display:grid;gap:6px}
+input,select,textarea{font:inherit;color:var(--tx);background:var(--g0);border:1px solid var(--g3);border-radius:0;padding:12px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--ac);outline-offset:-1px}
+textarea{min-height:76px;resize:vertical}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:13px}
+.chk input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:var(--ac)}
+form .btn{width:100%;box-shadow:none;margin-top:4px}
+#ok{display:none;background:var(--g0);border:1px solid var(--ok);color:var(--ok);padding:14px;font-size:14px}
+footer{background:var(--g1);border-top:1px solid var(--g3);padding:26px 0 30px;font-size:13px;color:var(--mt)}
+footer p+p{margin-top:6px}
+@media(min-width:720px){
+ .hero{padding:72px 0 64px}
+ .price{grid-template-columns:1fr 1fr}
+ .about{grid-template-columns:1.2fr 1fr;align-items:start}
+ .steps{grid-template-columns:repeat(5,1fr)}
+ .steps li{padding:64px 14px 18px}
+ .revs{grid-template-columns:repeat(3,1fr)}
+ .cg{grid-template-columns:1fr 1.2fr;align-items:start}
+ form{padding:28px}
+}
+</style>
+</head>
+<body>
+<div class="demo">Демонстрационная работа. Бизнес, название, цены, отзывы и контакты вымышлены — это не сайт реального заказчика.</div>
+<div class="stripe"></div>
+<header><div class="w">
+ <div class="logo"><i>3</i>Три поста</div>
+ <a class="hdr-tel" href="#form">+7 (000) 000-00-00</a>
+</div></header>
+
+<main>
+<div class="hero"><div class="w">
+ <span class="tag">Автосервис · 3 поста · иномарки и отечественные</span>
+ <h1>Сначала смета, <em>потом ремонт</em></h1>
+ <p class="lead">ТО, диагностика, ходовая и шиномонтаж. Покажем неисправность на подъёмнике, согласуем каждую позицию — и ни рубля сверх оговорённого.</p>
+ <a class="btn" href="#form">Записаться на пост</a>
+ <div class="facts">
+  <div><b>3</b><span>поста с подъёмниками</span></div>
+  <div><b>30<small style="font-size:14px"> мин</small></b><span>замена масла и фильтра</span></div>
+  <div><b>6<small style="font-size:14px"> мес</small></b><span>гарантия на работы</span></div>
+ </div>
+ <p style="font-size:12px;opacity:.7;margin-top:8px">Цифры — пример оформления блока.</p>
+</div></div>
+
+<section id="price"><div class="w">
+ <h2>Цены</h2>
+ <p class="sub">Стоимость работ без запчастей. Детали можно привезти свои или взять у нас — подберём по VIN под ваш бюджет.</p>
+ <div class="price">
+  <div class="pi"><h3>Компьютерная диагностика</h3><p>Чтение ошибок, живые параметры двигателя, распечатка отчёта</p><div class="p"><small>от</small>1 500 ₽</div></div>
+  <div class="pi"><h3>ТО: масло + фильтр</h3><p>Слив, замена фильтра, заливка, сброс сервисного интервала</p><div class="p"><small>от</small>1 200 ₽</div></div>
+  <div class="pi"><h3>Диагностика ходовой</h3><p>Осмотр на подъёмнике: рычаги, сайлентблоки, шаровые, рулевое. Бесплатно при ремонте у нас</p><div class="p"><small>от</small>800 ₽</div></div>
+  <div class="pi"><h3>Замена тормозных колодок</h3><p>Одна ось, с чисткой и смазкой направляющих</p><div class="p"><small>от</small>1 400 ₽</div></div>
+  <div class="pi"><h3>Замена амортизатора</h3><p>За одну стойку, с проверкой опоры и пыльника</p><div class="p"><small>от</small>2 000 ₽</div></div>
+  <div class="pi"><h3>Развал-схождение</h3><p>Регулировка обеих осей, распечатка «до» и «после»</p><div class="p"><small>от</small>2 500 ₽</div></div>
+  <div class="pi"><h3>Шиномонтаж, комплект R13–R16</h3><p>Снятие, монтаж, балансировка четырёх колёс</p><div class="p"><small>от</small>2 400 ₽</div></div>
+  <div class="pi"><h3>Замена ремня ГРМ</h3><p>С роликами и помпой по регламенту, цена зависит от двигателя</p><div class="p"><small>от</small>6 500 ₽</div></div>
+ </div>
+ <p class="note">Точную цену называем после осмотра — и фиксируем её в смете до начала работ.</p>
+</div></section>
+
+<section id="about"><div class="w about">
+ <div>
+  <h2>О сервисе</h2>
+  <p>Мы небольшой сервис: три поста, четыре механика, один приёмщик. Машину не передают по цепочке — кто принял, тот и отвечает за результат.</p>
+  <p>Работаем с иномарками и отечественными легковыми автомобилями и кроссоверами. Берёмся за то, что умеем делать хорошо: регламентное ТО, ходовая, тормоза, диагностика, сезонная переобувка. Капитальный ремонт двигателя и кузовные работы не делаем — честно скажем и подскажем, куда обратиться.</p>
+  <ul class="list">
+   <li>Старые детали отдаём вам в пакете</li>
+   <li>Можно ждать в клиентской зоне: кофе, вай-фай, окно на пост</li>
+   <li>Фото и видео неисправности — в мессенджер, пока вы на работе</li>
+  </ul>
+ </div>
+ <div class="bay" aria-hidden="true">
+  <svg viewBox="0 0 300 190" fill="none">
+   <defs><pattern id="hz" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="12" fill="#f5a524"/></pattern></defs>
+   <rect x="0" y="176" width="300" height="14" fill="url(#hz)"/>
+   <g stroke="#3c4146" stroke-width="2"><rect x="8" y="20" width="88" height="150"/><rect x="106" y="20" width="88" height="150"/><rect x="204" y="20" width="88" height="150"/></g>
+   <g fill="#f5a524" font-family="system-ui,sans-serif" font-weight="900" font-size="34"><text x="40" y="62">1</text><text x="138" y="62">2</text><text x="236" y="62">3</text></g>
+   <g fill="#a3a6a8" font-family="system-ui,sans-serif" font-size="11"><text x="24" y="160">ТО · масло</text><text x="118" y="160">ходовая · СХ</text><text x="216" y="160">шиномонтаж</text></g>
+   <g stroke="#e9e6df" stroke-width="3"><path d="M20 120h64M118 120h64M216 120h64"/><path d="M30 120v24M74 120v24M128 120v24M172 120v24M226 120v24M270 120v24"/></g>
+   <path d="M114 112c8-18 22-24 36-24s26 6 36 24z" fill="#2f3337" stroke="#f5a524" stroke-width="2"/>
+   <circle cx="132" cy="112" r="7" fill="#1b1d20" stroke="#e9e6df" stroke-width="2"/><circle cx="168" cy="112" r="7" fill="#1b1d20" stroke="#e9e6df" stroke-width="2"/>
+  </svg>
+ </div>
+</div></section>
+
+<section id="how"><div class="w">
+ <h2>Как мы работаем</h2>
+ <p class="sub">Пять шагов, на каждом вы знаете, что происходит с машиной и сколько это стоит.</p>
+ <ol class="steps">
+  <li><b>Запись</b><span>Выбираете день и время — пост ждёт вас, без очереди у ворот.</span></li>
+  <li><b>Диагностика</b><span>Смотрим на подъёмнике, можно стоять рядом. Снимаем фото и видео.</span></li>
+  <li><b>Смета</b><span>Список работ и деталей с ценами. Что срочно, а что подождёт — говорим прямо.</span></li>
+  <li><b>Ремонт</b><span>Делаем только согласованное. Нашли ещё что-то — сначала звоним.</span></li>
+  <li><b>Гарантия</b><span>Заказ-наряд на руки, 6 месяцев на работы, старые детали — вам.</span></li>
+ </ol>
+</div></section>
+
+<section id="reviews"><div class="w">
+ <h2>Отзывы</h2>
+ <span class="rv-note">Отзывы вымышлены — пример оформления блока</span>
+ <div class="revs">
+  <div class="rv"><q>Приехал менять колодки, а мне показали ещё и потёкший пыльник ШРУСа. Не навязывали — просто сняли на видео. Через неделю вернулся и сделал.</q><cite><b>Андрей</b> · ходовая и тормоза</cite></div>
+  <div class="rv"><q>Переобувка по записи заняла 40 минут, ни минуты в очереди. Колёса отбалансировали, руль больше не дрожит на трассе.</q><cite><b>Марина</b> · шиномонтаж</cite></div>
+  <div class="rv"><q>В другом месте насчитали ремонт на 38 тысяч. Здесь по диагностике выяснилось, что виноват датчик за пару тысяч. Теперь езжу только сюда.</q><cite><b>Сергей</b> · компьютерная диагностика</cite></div>
+ </div>
+</div></section>
+
+<section id="faq"><div class="w">
+ <h2>Вопросы</h2>
+ <p class="sub">То, что спрашивают чаще всего по телефону.</p>
+ <details><summary>Можно привезти свои запчасти и масло?</summary><p>Да. Проверим, что деталь подходит, и поставим. Гарантию в этом случае даём на работу, на саму деталь — продавец.</p></details>
+ <details><summary>Сохранится ли гарантия дилера после ТО у вас?</summary><p>Делаем ТО по регламенту производителя, с допусками по маслу и записью в сервисную книжку. Как правило, этого достаточно, чтобы гарантия сохранилась — но условия гарантии лучше перечитать заранее.</p></details>
+ <details><summary>Сколько ждать машину?</summary><p>ТО и шиномонтаж — 30–60 минут, можно подождать у нас. Ходовая — обычно в тот же день, если детали в наличии.</p></details>
+ <details><summary>Что если в процессе найдёте ещё поломку?</summary><p>Остановимся, пришлём фото и цену. Без вашего «да» лишнего не делаем и в счёт не включаем.</p></details>
+</div></section>
+
+<section id="form"><div class="w cg">
+ <div>
+  <h2>Контакты</h2>
+  <p class="sub">Запишитесь онлайн — перезвоним в течение 15 минут в рабочее время и подтвердим пост.</p>
+  <div class="ct">
+   <div><small>Адрес</small><b>ул. Примерная, 12</b></div>
+   <div><small>Телефон</small><b>+7 (000) 000-00-00</b></div>
+   <div><small>Почта</small><b>example@example.com</b></div>
+   <div><small>Часы работы</small><b>Пн–Сб 9:00–20:00</b><br><span style="color:var(--mt);font-size:14px">Вс 10:00–17:00, только шиномонтаж</span></div>
+   <div><small>Соцсети</small><b>ВКонтакте и Telegram — «Три поста» (пример)</b></div>
+  </div>
+ </div>
+ <form method="post" onsubmit="document.getElementById('ok').style.display='block';this.querySelector('button').disabled=true;return false">
+  <label>Имя<input name="name" required autocomplete="name" placeholder="Как к вам обращаться"></label>
+  <label>Телефон<input name="phone" type="tel" required autocomplete="tel" pattern="[0-9+\(\)\-\s]{10,}" placeholder="+7 (___) ___-__-__"></label>
+  <label>Услуга<select name="service" required>
+   <option value="">Выберите услугу</option>
+   <option>Компьютерная диагностика</option>
+   <option>ТО: масло и фильтры</option>
+   <option>Ходовая и тормоза</option>
+   <option>Развал-схождение</option>
+   <option>Шиномонтаж</option>
+   <option>Другое — опишу ниже</option>
+  </select></label>
+  <label>Машина и что беспокоит<textarea name="comment" placeholder="Например: седан, стук спереди справа на неровностях"></textarea></label>
+  <label class="chk"><input type="checkbox" required>Согласен на обработку персональных данных</label>
+  <button class="btn" type="submit">Записаться</button>
+  <div id="ok" role="status">Это демонстрационная страница, заявка не отправляется. На настоящем сайте она придёт владельцу в Telegram за секунды.</div>
+ </form>
+</div></section>
+</main>
+
+<div class="stripe"></div>
+<footer><div class="w">
+ <p>Автосервис «Три поста» · ул. Примерная, 12 · +7 (000) 000-00-00</p>
+ <p>Демонстрационная работа: бизнес, цены, отзывы и контакты вымышлены.</p>
+</div></footer>
+</body>
+</html>
